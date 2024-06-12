@@ -50,7 +50,7 @@ def display_employees_by_department(department_name):
     emp_mgmt.display_employees_by_department(department_name)
 
 @cli.command()
-@click.option('--date', prompt='Shift date', help='Enter the shift date (YYYY-MM-DD)')
+@click.option('--date', prompt='Shift date(YYYY-MM-DD)', help='Enter the shift date (YYYY-MM-DD)')
 @click.option('--employee-id', prompt='Employee ID', help='Enter the employee ID for the shift')
 def add_shift(date, employee_id):
     

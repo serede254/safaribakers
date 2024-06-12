@@ -2,8 +2,12 @@ import sqlite3
 
 class EmployeeManagement:
     def __init__(self, db_name='employee_management.db'):
-        self.conn = sqlite3.connect(db_name)
-        self.create_tables()
+        try:
+            self.conn = sqlite3.connect(db_name)
+            self.create_tables()
+        except sqlite3.Error as e:
+            print("Error connecting to database:", e)
+
 
     def create_tables(self):
         c = self.conn.cursor()
